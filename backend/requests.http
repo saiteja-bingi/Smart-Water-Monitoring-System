@@ -1,0 +1,61 @@
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZTYyM2YzNmYwMmJhZmMxMTkzNTcwYSIsImlhdCI6MTc3NjY5MDM2MywiZXhwIjoxNzc3Mjk1MTYzfQ.dvy9j68UGNAjL58v0ETE827LDcS8i_PbeZgqxIEq9GY
+@token1= eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZTYyNmZhZjk4YTY2NDczYTc2YWQ3NCIsImlhdCI6MTc3NjY5MTE1NCwiZXhwIjoxNzc3Mjk1OTU0fQ.NFXac6Utf4X5BQTV8P4k2iMHzI4ONd3j84M7AZ38JcI
+@token2= eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZTYyYTkxNjE1ODYwZWE5MmZiN2ZlOCIsImlhdCI6MTc3NjY5MTg2MywiZXhwIjoxNzc3Mjk2NjYzfQ.BAeepsH78XmcbN5zMRqM56Pb6MUI122BESc5KdsYkJg
+### Register User
+POST http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+  "name": "vinay",
+  "email": "vinay@gmail.com",
+  "password": "123456",
+  "tankCapacity": 1000,
+  "tankHeight": 120
+}
+
+### Login User
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "vinay@gmail.com",
+  "password": "123456"
+}
+
+
+
+### Get User Profile
+GET http://localhost:5000/api/user/profile
+Authorization: Bearer {{token}}
+
+### Update Water Level
+POST http://localhost:5000/api/water/update
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "waterPercent": 99
+}
+
+### Get Water History
+GET http://localhost:5000/api/water/history
+Authorization: Bearer {{token}}
+
+### Get Latest Water Data
+GET http://localhost:5000/api/water/latest
+Authorization: Bearer {{token}}
+
+### Checking points
+POST http://localhost:5000/api/points/daily
+Authorization: Bearer {{token}}
+
+### checking leaderboard
+GET http://localhost:5000/api/leaderboard
+
+### Testing recommendation
+GET http://localhost:5000/api/recommendations
+Authorization: Bearer {{token2}}
+
+### Dashboard Testing
+GET http://localhost:5000/api/dashboard
+Authorization: Bearer {{token}}
