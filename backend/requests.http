@@ -6,8 +6,8 @@ POST http://localhost:5000/api/auth/register
 Content-Type: application/json
 
 {
-  "name": "vinay",
-  "email": "vinay@gmail.com",
+  "name": "praneeth",
+  "email": "praneeth@gmail.com",
   "password": "123456",
   "tankCapacity": 1000,
   "tankHeight": 120
@@ -18,7 +18,7 @@ POST http://localhost:5000/api/auth/login
 Content-Type: application/json
 
 {
-  "email": "vinay@gmail.com",
+  "email": "praneeth@gmail.com",
   "password": "123456"
 }
 
@@ -34,7 +34,7 @@ Content-Type: application/json
 Authorization: Bearer {{token}}
 
 {
-  "waterPercent": 99
+  "distance": 35.6
 }
 
 ### Get Water History
